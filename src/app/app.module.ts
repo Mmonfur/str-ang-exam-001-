@@ -1,41 +1,39 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Router, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms'
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from 'src/app/home/home.component';
+import { HeroesComponent } from 'src/app/heroes/heroes.component';
 
 const appRoutes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent
   },
   {
-    path: "heroes",
+    path: 'heroes',
     component: HeroesComponent
   },
   {
-    path: "**",
+    path: '**',
     component: HomeComponent
-  },
-
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    HomeComponent,
+    HeroesComponent,
+
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
